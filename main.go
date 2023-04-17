@@ -98,7 +98,6 @@ func main() {
 						if len(tabrune) != 0 {
 							res += "\n"
 						} else {
-							res += "\n"
 							break
 						}
 					}

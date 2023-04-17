@@ -96,7 +96,7 @@ func main() {
 							res += Match(tabrune[i], j, tabascii)
 						}
 						if len(tabrune) != 0 {
-							res = "\n"
+							res += "\n"
 						} else {
 							res += "\n"
 							break

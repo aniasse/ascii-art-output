@@ -33,8 +33,17 @@ func Banner(s string) string {
 	return "./" + s + ".txt"
 }
 
-func OutputName(S string) string {
-	var filename string
+func Flag(s string) bool {
+	tab := []rune(s)
+	if len(tab) > 8 && string(tab[:8]) == "--color=" {
+		return true
+	} else {
+		return false
+	}
+}
+
+func ColorFlag(S string) string {
+	var color string
 	var j int
 	for i := 0; i < len(S); i++ {
 		if S[i] != '=' {
@@ -44,7 +53,17 @@ func OutputName(S string) string {
 		}
 	}
 	for k := j + 1; k < len(S); k++ {
-		filename += string(S[k])
+		color += string(S[k])
 	}
-	return filename
+	return color
+}
+
+func ToColor(s string, r rune) bool {
+	tab := []rune(s)
+	for i := 0; i < len(tab); i++ {
+		if tab[i] == r {
+			return true
+		}
+	}
+	return false
 }

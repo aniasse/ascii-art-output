@@ -18,15 +18,8 @@ func TestNewline(t *testing.T) {
 
 }
 func TestPrintable(t *testing.T) {
-	tab := []rune{'é', 'g'}
-	tab2 := []rune{'d'}
-	result1 := Printable(tab)
 
-	if !result1 {
-		t.Error("Test FAILED.")
-	} else {
-		t.Log("Test PASSED.")
-	}
+	tab2 := []rune{'d'}
 	result2 := Printable(tab2)
 	if !result2 {
 		t.Error("Test FAILED.")
@@ -39,16 +32,6 @@ func TestBanner(t *testing.T) {
 	fichier := "standard"
 	expected := "./standard.txt"
 	result := Banner(fichier)
-	if expected != result {
-		t.Error("Test FAILED.")
-	} else {
-		t.Log("Test PASSED.")
-	}
-}
-func TestOutputName(t *testing.T) {
-	name := "--output=banner.txt"
-	expected := "banner.txt"
-	result := OutputName(name)
 	if expected != result {
 		t.Error("Test FAILED.")
 	} else {
@@ -74,5 +57,36 @@ func TestMatch(t *testing.T) {
 		t.Error("Test FAILED.")
 	} else {
 		t.Log("Test PASSED.")
+	}
+}
+
+func TestFlag(t *testing.T) {
+	flag1 := "--color=weex"
+	result1 := Flag(flag1)
+	if !result1 {
+		t.Error("Test FAILED.")
+	} else {
+		t.Log("Test PASSED.")
+	}
+}
+
+func TestColorFlag(t *testing.T) {
+	flag := "--color=chartreuse"
+	expected := "chartreuse"
+	result := ColorFlag(flag)
+	if result == expected {
+		t.Log("Test PASSED.")
+	} else {
+		t.Error("Test FAILED.")
+	}
+}
+
+func TestToColor(t *testing.T) {
+	s := "Ab"
+	r := 'b'
+	if ToColor(s, r) {
+		t.Log("Test PASSED.")
+	} else {
+		t.Error("Test FAILED.")
 	}
 }

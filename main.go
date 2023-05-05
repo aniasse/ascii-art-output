@@ -18,6 +18,6 @@ func main() {
 	} else if len(os.Args) == 4 && Func.Output(os.Args[1]) {
 		Func.AsciiOutput(os.Args[1], os.Args[2], os.Args[3])
 	} else {
-		fmt.Println("Usage: go run . [OPTION] [STRING]\n\nEX: go run . --color=<color> <letters to be colored> something ")
+		fmt.Println("Usage: go run . [OPTION] [STRING] [BANNER]\n\nEX: go run . --output=<fileName.txt> something standard")
 	}
 }
